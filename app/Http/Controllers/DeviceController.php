@@ -48,4 +48,9 @@ class DeviceController extends Controller
             return ["Result"=>"Update Operation failed"];
         }
     }
+    function search($name)
+    {
+        $device=DeviceModel::where('name',$name)->get();
+        return $device;
+    }
 }
