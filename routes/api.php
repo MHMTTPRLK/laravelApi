@@ -22,4 +22,5 @@ Route::get('/list',[App\Http\Controllers\DeviceController::class,'list']);
 //Route::get('/list/{id?}',[App\Http\Controllers\DeviceController::class,'list']);
 Route::get('/list/{id}',[App\Http\Controllers\DeviceController::class,'find']);
 Route::post('add',[App\Http\Controllers\DeviceController::class,'add']);
+Route::put('device/update',[App\Http\Controllers\DeviceController::class,'update']);
 
