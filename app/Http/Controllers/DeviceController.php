@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DeviceModel;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Validator;
 
 class DeviceController extends Controller
 {
@@ -64,5 +66,21 @@ class DeviceController extends Controller
        else{
            return ["Result"=>"Delete Operation failed"];
        }
+    }
+
+    function testValidate(Request $request)
+    {
+        $rules=array(
+            'name'=>'required'
+        );
+        $validator=Validator::make($request->all(),$rules);
+        if($validator->fails())
+        {
+            return $validator->errors();
+        }
+        else{
+
+        }
+
     }
 }
