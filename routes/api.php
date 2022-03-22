@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('/testData',[App\Http\Controllers\dummpApiController::class,'testData']);
 Route::get('/list',[App\Http\Controllers\DeviceController::class,'list']);
+Route::get('/list/{id}',[App\Http\Controllers\DeviceController::class,'find']);
+

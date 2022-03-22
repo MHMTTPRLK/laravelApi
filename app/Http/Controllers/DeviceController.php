@@ -11,4 +11,9 @@ class DeviceController extends Controller
     {
         return DeviceModel::all();
     }
+    function find($id)
+    {
+       $device=DeviceModel::find($id);
+       return $device;
+    }
 }
